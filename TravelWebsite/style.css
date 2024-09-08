@@ -1,0 +1,384 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;1,500&display=swap');
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    font-family: "Poppins", sans-serif;
+
+}
+.container{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(9,0,77,0.65),rgba(9,0,77,0.65)),url(./background.png);
+    background-size: cover;
+    background-position: center;
+    display: flexbox;
+    background-attachment: fixed;
+    overflow: auto;
+}
+
+header{
+    width: 100%;
+    height: 12%;
+    background:rgba(0,0,0,0.2);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 5%;
+}
+.sidebardiv button{
+    font-size: 0.95rem;
+    font-weight: 500;
+    width: fit-content;
+    padding: 8px 16px;
+    border: 2px solid white;
+    background-color: indianred;
+    border-radius:30px;
+    cursor: pointer;
+}
+li{
+  display: inline-block;
+  padding: 25px;
+}
+
+ul.menubar li a{
+color: white;
+font-size: 20px;
+cursor: pointer;
+position: relative;
+padding: 8px;
+}
+header button{
+    width: 120px;
+    height: 40px;
+    border: 2px solid indianred;
+    border-radius: 40px;
+    font-size: 17px;
+    background: transparent;
+    color: #fff;
+}
+button:hover{
+    background: indianred;
+    transition: 0.2s;
+}
+
+
+
+/* css animation */
+li a:hover{
+    color: rgb(202, 197, 197);
+}
+a::before{
+    content: '';
+    position:absolute;
+    width: 0%;
+    height: 3px;
+    left: 0px;
+    bottom: -4px;
+    background:indianred;
+    transition: 0.5s;
+
+}
+
+li a:hover::before{
+    width:100%;
+}
+
+
+
+/* drop down */
+ul.dropdown{
+position: absolute;
+width: 113px;
+margin-top: 10px;
+background-color: indianred;
+display: none;
+
+}
+ul.dropdown li{
+    display: block;
+    padding: 15px 10px;
+    text-align: center;  
+}
+
+ul li:hover ul.dropdown{
+    display: block;
+}
+
+/* sidebar */
+.sidebardiv{
+    width: 200px;
+    height: 100vh;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 999;
+    background-color: indianred;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sidebar li{
+    display: block;
+    margin: auto;
+    align-items: center;
+}
+
+.sidebardiv button{
+    border: 2px solid white;
+    margin: 10%;
+}
+
+.menusvg{
+    display: none;
+}
+
+
+/* responsiveness */
+@media(max-width:1265px){
+    .hideonmobile{
+      display: none;
+    }
+    .menusvg{
+        display: block;
+    }
+}
+
+/* content */
+.content{
+height: 30%;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+color: indianred;
+font-size: large;
+margin: 50px;
+}
+
+.content h1{
+    font-size: 70px;
+    font-weight: 600;
+    line-height: 75px;
+    margin-bottom: 25px;
+}
+
+.content h3{
+    font-family: "Poppins", sans-serif;
+    font-style: italic;
+    color: #fff;
+    
+}
+
+.content2{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 30%;
+}
+
+.content2 h1{
+font-size: 50px;
+font-weight: 600;
+letter-spacing: 1.9px;
+color:indianred;
+}
+
+.formdiv{
+height: 80px;
+width: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.searchlogo{
+    height: 25px;
+    width: 25px;
+}
+.searchbar{
+ width: 60%;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ background-color: white;
+ padding: 10px 20px;
+ border-radius: 30px;
+ box-sizing: border-box;
+ overflow: hidden;
+}
+
+.searchbar input{
+    flex: 1;
+    background: transparent;
+    border: 0;
+    outline: 0;
+    padding: 10px 10px;
+    font-size: 16px;
+}
+
+.searchbar button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 80px;
+    width: 100%;
+    padding: 10px 20px;
+    border-radius: 30px;
+    border: 0;
+    outline: 0;
+    background-color: indianred;
+    cursor: pointer;
+}
+
+/* card slide */
+.box{
+    width: 200px;
+    display: block;
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+}
+.box:hover{
+    border: 2px solid indianred;
+    transform: scale(1.5);
+    transition: 0.2ms ease;
+}
+.box-image{
+    width: 100%;
+    aspect-ratio: 4/5;
+    object-fit: cover;
+    height: 100%;
+}
+.break-point{
+    max-width: 1200px;
+    margin: 0 60px 35px;
+    padding: 20px 10px;
+    overflow: hidden;
+}
+
+.box-content{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background:linear-gradient(transparent,rgba(0,0,0,0.9) 20%);
+    width: 100%;
+    padding: 30px;
+    display: none;
+}
+.box:hover .box-content{
+    display: block;
+    transition: 0.4s ease;
+}
+.card-title{
+    color: indianred;
+    margin: 5px;
+}
+.badge{
+    margin: auto;
+    font-size: 0.95rem;
+    font-weight: 500;
+    padding: 8px 16px;
+    width: fit-content;
+    background-color: indianred;
+    border-radius: 30px;
+    color: #fff;
+    cursor: pointer;
+    
+}
+.card-title,.badge{
+    display: block;
+    text-align: center;
+    margin: auto;
+}
+
+.content3{
+    margin: 100px 0px;
+}
+/* footer */
+footer{
+ background: rgba(0,0,0,0.4);
+ width: 100%;
+ padding: 70px 30px 20px;
+}
+.socialicons{
+    display: flex;
+    justify-content: center;
+}
+
+.socialicons a{
+    padding: 10px;
+    background-color: indianred;
+    border-radius: 50%;
+    margin: 10px;
+}
+
+.socialicons a i{
+    font-size: 1.5rem;
+    color: #fff;
+    opacity: 0.9;
+}
+.socialicons a:hover{
+background-color:#fff;
+transition: 0.5s ease;
+}
+
+.socialicons a:hover i{
+    color: indianred;
+    transition: 0.5s ease;
+}
+
+.footernav{
+    margin: 30px 0px;
+}
+
+.footernav ul{
+    display: flex;
+    justify-content: center;
+}
+
+
+.footernav ul li a{
+    color: #fff;
+    margin: 0px;
+    font-size: 1.3rem;
+    opacity: 0.7;
+    transition: 0.5s;
+}
+
+.footernav ul li:hover a{
+    opacity: 2;
+}
+
+.container p{
+    background: rgba(0,0,0,0.6);
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+}
+
+.designername{
+ color: indianred;
+ text-transform: uppercase;
+ font-weight: 400;
+ letter-spacing: 1px;
+ margin: 8px 5px;
+}
+
+
+@media(max-width:700px){
+    .footernav ul{
+        flex-direction: column;
+    }
+    .footernav ul li{
+        width: 100%;
+        text-align: center;
+        margin: 0px;
+        padding: 15px;
+    }
+}
